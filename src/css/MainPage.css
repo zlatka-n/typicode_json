@@ -1,0 +1,85 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html,
+body,
+.App {
+  height: 100vh;
+  font-size: 16px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: #dcdcdc;
+}
+
+/*search bar*/
+.searchBar-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.barAndBtn {
+  border: transparent;
+  border-radius: 5px;
+  padding: 10px;
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+}
+
+#input {
+  border: none;
+  width: 90%;
+}
+
+#input:focus {
+  outline: none;
+}
+
+/*user*/
+.renderUsers-wrapper {
+  width: 70%;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.renderUser {
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.renderUser:first-child {
+  padding-top: 20px;
+}
+
+.renderUser:last-child {
+  padding-bottom: 20px;
+}
+
+.renderUser:not(:first-child) {
+  margin-top: 20px;
+}
+
+.renderUser:not(:last-child) {
+  border-bottom: 1px solid #65676b;
+  padding-bottom: 10px;
+}
+.user-container {
+  margin-left: 10px;
+  font-size: 0.75em;
+}
+.user-textInfo {
+  color: #65676b;
+  font-size: 0.65em;
+}
+#userIcon {
+  font-size: 2.5em;
+}
