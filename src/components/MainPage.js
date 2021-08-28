@@ -2,27 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BsSearch } from "react-icons/bs";
 import { FaUserCircle } from "react-icons/fa";
-
 import "../css/MainPage.css";
 
 function MainPage() {
-  //   const [users, setUsers] = useState("");
   const [debouncedUser, setDebouncedUser] = useState("");
   const [results, setResults] = useState([]);
+  const [sortUsers, setSortUsers] = useState("az");
 
   const baseURL = "https://jsonplaceholder.typicode.com/users";
-
-  const onFormChange = (event) => {
-    setDebouncedUser(event.target.value);
-  };
-
-  const onFormSubmit = (event) => {
-    event.preventDefault();
-    const filterUser = results.filter((user) =>
-      user.name.includes(debouncedUser)
-    );
-    setResults(filterUser);
-  };
 
   useEffect(() => {
     axios.get(`${baseURL}/`).then((response) => {
@@ -36,6 +23,7 @@ function MainPage() {
 
   const renderUsers = () => {
     return results.map((user) => {
+      //console.log(sortUsers + " sortUsers");
       return (
         <div key={user.id} className="renderUser">
           <span>
@@ -49,6 +37,63 @@ function MainPage() {
         </div>
       );
     });
+  };
+
+  //look for a user in the search bar
+  const onFormChange = (event) => {
+    setDebouncedUser(event.target.value);
+  };
+
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+
+    const filterUser = results.filter((user) => {
+      // case insensitive search
+      let userUpperCase = user.name.toUpperCase();
+      return userUpperCase.includes(debouncedUser.toUpperCase());
+    });
+    setResults(filterUser);
+  };
+
+  //user selects alphabeticall sorting
+  const getSortSelection = () => {
+    return (
+      <div className="sort-box">
+        <select onChange={onSelectClick}>
+          <option value="az">Names (A-Z)</option>
+          <option value="za">Names (Z-A)</option>
+        </select>
+      </div>
+    );
+  };
+
+  const onSelectClick = (event) => {
+    const sortSelection = event.target.value;
+    setSortUsers(sortSelection);
+  };
+
+  const getSortedUserArray = () => {
+    if (sortUsers === "az") {
+      results.sort((a, b) => {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      });
+    } else if (sortUsers === "za") {
+      results.sort((a, b) => {
+        if (a.name > b.name) {
+          return -1;
+        }
+        if (a.name < b.name) {
+          return 1;
+        }
+        return 0;
+      });
+    }
   };
 
   return (
@@ -66,7 +111,11 @@ function MainPage() {
           </div>
         </form>
       </div>
-      <div className="renderUsers-wrapper">{renderUsers()}</div>
+      <div className="renderUsers-wrapper">
+        {getSortSelection()}
+        {renderUsers()}
+        {getSortedUserArray()}
+      </div>
       <br></br>
     </div>
   );
