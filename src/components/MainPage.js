@@ -21,9 +21,22 @@ function MainPage() {
 
   if (!results) return null;
 
+  /////////////RENDER USERS/////////////
   const renderUsers = () => {
+    if (results.length === 0) {
+      return (
+        <div className="noResults">
+          <div>
+            <BsSearch></BsSearch>
+          </div>
+          <div id="noResultsText">
+            No results found for <span id="userNotFound">{debouncedUser}</span>.
+          </div>
+        </div>
+      );
+    }
+
     return results.map((user) => {
-      //console.log(sortUsers + " sortUsers");
       return (
         <div key={user.id} className="renderUser">
           <span>
@@ -52,19 +65,23 @@ function MainPage() {
       let userUpperCase = user.name.toUpperCase();
       return userUpperCase.includes(debouncedUser.toUpperCase());
     });
+
     setResults(filterUser);
   };
 
   //user selects alphabeticall sorting
   const getSortSelection = () => {
-    return (
-      <div className="sort-box">
-        <select onChange={onSelectClick}>
-          <option value="az">Names (A-Z)</option>
-          <option value="za">Names (Z-A)</option>
-        </select>
-      </div>
-    );
+    if (results.length !== 0) {
+      return (
+        <div className="sort-box">
+          <span className="sortBy-title">Sort by: </span>
+          <select onChange={onSelectClick} className="select">
+            <option value="az">Names (A-Z)</option>
+            <option value="za">Names (Z-A)</option>
+          </select>
+        </div>
+      );
+    }
   };
 
   const onSelectClick = (event) => {
@@ -97,7 +114,7 @@ function MainPage() {
   };
 
   return (
-    <div>
+    <div className="mainPage-component">
       <div className="searchBar">
         <form onSubmit={onFormSubmit} className="searchBar-wrapper">
           <div className="barAndBtn">
@@ -111,7 +128,11 @@ function MainPage() {
           </div>
         </form>
       </div>
-      <div className="renderUsers-wrapper">
+      <div
+        className={
+          results.length === 0 ? "noResults-wrapper" : "renderUsers-wrapper"
+        }
+      >
         {getSortSelection()}
         {renderUsers()}
         {getSortedUserArray()}

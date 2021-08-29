@@ -83,3 +83,33 @@ body {
 #userIcon {
   font-size: 2.5em;
 }
+
+.noResults {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*SORT*/
+.sort-box {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.select {
+  border: transparent;
+  outline: transparent;
+  font-size: 0.75em;
+}
+
+.sortBy-title {
+  font-size: 0.75em;
+}
+
+#noResultsText {
+  padding-top: 10px;
+}
+
+#userNotFound {
+  font-weight: 500;
+}
