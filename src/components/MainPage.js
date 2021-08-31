@@ -69,7 +69,7 @@ function MainPage() {
     setResults(filterUser);
   };
 
-  //user selects alphabeticall sorting
+  //user selects alphabetical sorting
   const getSortSelection = () => {
     if (results.length !== 0) {
       return (
