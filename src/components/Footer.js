@@ -5,13 +5,13 @@ function Footer() {
     <div className="footer-component">
       <footer className="footer-wrapper">
         <div className="contacts">
-          Contacts
-          <div>Email: zlatka094@seznam.cz</div>
-          <div>Phone: +420 735 204 082</div>
+          <div className="title-footer">Contacts</div>
+          <div className="text-footer">Email: zlatka094@seznam.cz</div>
+          <div className="text-footer">Phone: +420 735 204 082</div>
         </div>
         <div className="explore">
-          Explore
-          <div>About</div>
+          <div className="title-footer">Explore</div>
+          <div className="text-footer">About</div>
         </div>
       </footer>
     </div>
