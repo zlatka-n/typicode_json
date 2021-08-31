@@ -2,16 +2,21 @@ import React from "react";
 import "../css/Header.css";
 import { AiOutlineHome } from "react-icons/ai";
 import { IoPeopleCircleOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <div className="header-component">
       <header className="header-wrapper">
         <span id="home-icon">
-          <AiOutlineHome />
+          <Link to="/">
+            <AiOutlineHome />
+          </Link>
         </span>
         <span id="people-icon">
-          <IoPeopleCircleOutline />
+          <Link to="/users">
+            <IoPeopleCircleOutline />
+          </Link>
         </span>
       </header>
     </div>

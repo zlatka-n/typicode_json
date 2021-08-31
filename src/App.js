@@ -1,14 +1,21 @@
 import MainPage from "./components/MainPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Home from "./components/Home";
 import "./css/index.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <MainPage />
-      <Footer />
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/users" exact component={MainPage} />
+        </Switch>
+        <Footer />
+      </Router>
     </div>
   );
 }
