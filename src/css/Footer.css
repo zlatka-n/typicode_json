@@ -1,0 +1,19 @@
+.footer-component {
+  width: 100%;
+  /* height: 50px; */
+  background-color: white;
+}
+
+.footer-wrapper {
+  font-size: 0.75em;
+  display: flex;
+  justify-content: center;
+  /* height: 100%; */
+}
+
+.contacts,
+.explore {
+  margin: 15px 15px 15px 15px;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
