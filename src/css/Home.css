@@ -1,8 +1,36 @@
 .home-wrapper {
-  width: 90%;
-  margin: 0 auto;
+  width: 80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  /* margin: 0 auto; */
+  font-size: 0.75em;
 }
 
 .post-wrapper {
-  display: inline-block;
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+  box-sizing: border-box;
+  padding: 15px 15px 15px 15px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.post-body {
+  display: flex;
+  flex-direction: column;
+}
+
+#user-avatar {
+  float: left;
+  margin-right: 5px;
+  font-size: 3em;
+}
+
+#userName {
+  font-weight: 600;
+}
+
+#userPost {
+  font-size: 0.9em;
 }
