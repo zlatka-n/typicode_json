@@ -1,20 +1,3 @@
-* {
-  margin: 0px;
-  padding: 0px;
-}
-
-/* html,
-body,
-.App {
-  height: 100vh;
-  font-size: 16px;
-  font-family: system-ui, -apple-system, sans-serif;
-} */
-
-body {
-  background-color: #dcdcdc;
-}
-
 /*search bar*/
 .searchBar-wrapper {
   display: flex;
@@ -69,7 +52,7 @@ body {
 }
 
 .renderUser:not(:last-child) {
-  border-bottom: 1px solid #65676b;
+  border-bottom: 1px solid #dcdcdc;
   padding-bottom: 10px;
 }
 .user-container {

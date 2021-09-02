@@ -1,9 +1,15 @@
+.home-component {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .home-wrapper {
   width: 80%;
   margin-right: 10%;
   margin-left: 10%;
-  /* margin: 0 auto; */
+  border-radius: 5px;
   font-size: 0.75em;
+  background-color: white;
 }
 
 .post-wrapper {
@@ -12,8 +18,8 @@
   margin-top: 10px;
   box-sizing: border-box;
   padding: 15px 15px 15px 15px;
-  border-radius: 5px;
-  background-color: white;
+  border-bottom: 1px solid#dcdcdc;
+  /* background-color: white; */
 }
 
 .post-body {
