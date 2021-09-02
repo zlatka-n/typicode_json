@@ -3,6 +3,7 @@ import axios from "axios";
 import { BsSearch } from "react-icons/bs";
 import { FaUserCircle } from "react-icons/fa";
 import "../css/MainPage.css";
+import { Link } from "react-router-dom";
 
 function MainPage() {
   const [debouncedUser, setDebouncedUser] = useState("");
@@ -39,11 +40,13 @@ function MainPage() {
     return results.map((user) => {
       return (
         <div key={user.id} className="renderUser">
-          <span>
-            <FaUserCircle id="userIcon"></FaUserCircle>
-          </span>
+          <Link to={`/user/${user.id}`}>
+            <FaUserCircle id="userIcon" className="linkToUser"></FaUserCircle>
+          </Link>
           <span className="user-container">
-            <div>{user.name}</div>
+            <Link to={`/user/${user.id}`}>
+              <div className="linkToUser">{user.name}</div>
+            </Link>
             <div className="user-textInfo">Lives in {user.address.city}</div>
             <div className="user-textInfo">Works at {user.company.name}</div>
           </span>

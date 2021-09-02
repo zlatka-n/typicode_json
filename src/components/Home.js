@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../css/Home.css";
 import axios from "axios";
 import { FaUserCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [results, setResults] = useState([]);
@@ -40,9 +41,18 @@ function Home() {
 
           return (
             <div className="post-wrapper" key={post.id}>
-              <FaUserCircle id="user-avatar"></FaUserCircle>
+              <Link to={`/user/${user.id}`}>
+                <FaUserCircle
+                  id="user-avatar"
+                  className="linkToUser"
+                ></FaUserCircle>
+              </Link>
               <div className="post-body">
-                <div id="userName">{user.name}</div>
+                <Link to={`/user/${user.id}`}>
+                  <div id="userName" className="linkToUser">
+                    {user.name}
+                  </div>
+                </Link>
                 <div id="userPost">{post.body}</div>
               </div>
             </div>

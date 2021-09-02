@@ -96,3 +96,16 @@
 #userNotFound {
   font-weight: 500;
 }
+
+.linkToUser {
+  color: black;
+  text-decoration: none;
+}
+
+.linkToUser:focus,
+:hover,
+:visited,
+:link,
+:active {
+  text-decoration: none;
+}
