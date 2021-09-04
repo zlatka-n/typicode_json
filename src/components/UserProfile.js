@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../css/UserProfile.css";
-import profileImg from "../image/profileImg.jpeg";
 import yvesKlein from "../image/yvesKlein.jpeg";
 import { AiOutlineUser } from "react-icons/ai";
+import { FaUserCircle } from "react-icons/fa";
 
 function UserProfile(props) {
   const [user, setUser] = useState([]);
@@ -46,12 +46,12 @@ function UserProfile(props) {
             <AiOutlineUser id="userProfile-avatar"></AiOutlineUser>
           </div>
           <div className="user-text">
-            <div>{el.name}</div>
-            <div>{el.username}</div>
-            <div>{el.email}</div>
-            <div>Lives in {el.address.city}</div>
-            <div>Works at {el.company.name}</div>
+            <div className="user-fullName">{el.name}</div>
+            <div className="userDetail">@{el.username}</div>
+            <div className="userDetail">Lives in {el.address.city}</div>
+            <div className="userDetail">Works at {el.company.name}</div>
           </div>
+          <div className="borderBottom"></div>
         </div>
       );
     }
@@ -63,9 +63,14 @@ function UserProfile(props) {
       const findUser = user.find((u) => u.id === post.userId);
 
       return (
-        <section key={post.id}>
-          <div>{findUser ? findUser.name : "Loading"}</div>
-          <div>{post.body}</div>
+        <section key={post.id} className="users-post">
+          <FaUserCircle id="userPic"></FaUserCircle>
+          <div className="post-body">
+            <div className="user-fullName">
+              {findUser ? findUser.name : "Loading"}
+            </div>
+            <div className="userPost">{post.body}</div>
+          </div>
         </section>
       );
     }

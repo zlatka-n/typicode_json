@@ -3,19 +3,25 @@
   height: 100%;
   margin: 0 auto;
   background-color: white;
+  font-size: 0.75em;
+  line-height: 1.5;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .imgAvatar-wrapper {
   position: relative;
-  /* background-color: aqua; */
   padding-bottom: 30px;
 }
 
+.user-profile {
+  width: 100%;
+}
 .imgProfile {
   width: 100%;
   height: auto;
   max-height: 150px;
-  position: relative;
+  /* position: relative; */
   z-index: 1;
 }
 
@@ -27,4 +33,38 @@
   bottom: 10px;
   color: #e64432;
   background-color: #f2d829;
+}
+
+.user-text {
+  box-sizing: border-box;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.user-fullName {
+  font-weight: 500;
+}
+.userDetail {
+  font-size: 0.9em;
+  color: #536471;
+}
+.borderBottom {
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.users-post {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  padding: 20px 15px 20px 15px;
+  border-bottom: 1px solid#dcdcdc;
+}
+
+#userPic {
+  float: left;
+  margin-right: 5px;
+  font-size: 3em;
+}
+
+.userPost {
+  font-size: 0.9em;
 }

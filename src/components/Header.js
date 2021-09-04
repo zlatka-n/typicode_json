@@ -10,12 +10,12 @@ function Header() {
       <header className="header-wrapper">
         <span id="home-icon">
           <Link to="/">
-            <AiOutlineHome />
+            <AiOutlineHome className="linkToUser homeIcon" />
           </Link>
         </span>
         <span id="people-icon">
           <Link to="/users">
-            <IoPeopleCircleOutline />
+            <IoPeopleCircleOutline className="linkToUser homeIcon" />
           </Link>
         </span>
       </header>

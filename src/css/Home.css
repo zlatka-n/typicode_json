@@ -10,6 +10,7 @@
   border-radius: 5px;
   font-size: 0.75em;
   background-color: white;
+  line-height: 1.5;
 }
 
 .post-wrapper {
@@ -32,9 +33,9 @@
 }
 
 #userName {
-  font-weight: 600;
+  font-weight: 500;
 }
 
-#userPost {
+.userPost {
   font-size: 0.9em;
 }

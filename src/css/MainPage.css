@@ -32,6 +32,7 @@
   background-color: white;
   border-radius: 5px;
   margin-top: 20px;
+  line-height: 1.5;
 }
 .renderUser {
   display: flex;
@@ -60,8 +61,8 @@
   font-size: 0.75em;
 }
 .user-textInfo {
-  color: #65676b;
-  font-size: 0.65em;
+  color: #536471;
+  font-size: 0.9em;
 }
 #userIcon {
   font-size: 2.5em;

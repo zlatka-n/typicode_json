@@ -40,7 +40,7 @@ function Home() {
           });
 
           return (
-            <div className="post-wrapper" key={post.id}>
+            <section className="post-wrapper" key={post.id}>
               <Link to={`/user/${user.id}`}>
                 <FaUserCircle
                   id="user-avatar"
@@ -53,9 +53,9 @@ function Home() {
                     {user.name}
                   </div>
                 </Link>
-                <div id="userPost">{post.body}</div>
+                <div className="userPost">{post.body}</div>
               </div>
-            </div>
+            </section>
           );
         }
         return null;
