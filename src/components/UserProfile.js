@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import _ from "lodash";
+import "../css/UserProfile.css";
+import profileImg from "../image/profileImg.jpeg";
+import yvesKlein from "../image/yvesKlein.jpeg";
+import { AiOutlineUser } from "react-icons/ai";
 
 function UserProfile(props) {
   const [user, setUser] = useState([]);
@@ -14,7 +17,6 @@ function UserProfile(props) {
     axios.get(userURL).then((response) => {
       const userData = response.data;
       setUser(userData);
-      // console.log(userData);
     });
   }, []);
 
@@ -28,16 +30,28 @@ function UserProfile(props) {
     });
   }, []);
 
+  if (user.length === 0 || posts.length === 0) return "Loading";
+
   const renderUser = user.map((el) => {
     if (Number(historyId) === el.id) {
       //console.log(el);
       return (
-        <div key={el.id}>
-          <div className="user-profile">{el.name}</div>
-          <div>{el.username}</div>
-          <div>{el.email}</div>
-          <div>Lives in {el.address.city}</div>
-          <div>Works at {el.company.name}</div>
+        <div className="user-profile" key={el.id}>
+          <div className="imgAvatar-wrapper">
+            <img
+              className="imgProfile"
+              alt="user profile background"
+              src={yvesKlein}
+            ></img>
+            <AiOutlineUser id="userProfile-avatar"></AiOutlineUser>
+          </div>
+          <div className="user-text">
+            <div>{el.name}</div>
+            <div>{el.username}</div>
+            <div>{el.email}</div>
+            <div>Lives in {el.address.city}</div>
+            <div>Works at {el.company.name}</div>
+          </div>
         </div>
       );
     }
@@ -46,13 +60,13 @@ function UserProfile(props) {
 
   const renderUserPosts = posts.map((post) => {
     if (Number(historyId) === post.userId) {
-      const findUser = _.find(user, { id: post.userId });
-      const userName = findUser.name;
+      const findUser = user.find((u) => u.id === post.userId);
+
       return (
-        <div key={post.id}>
-          <div>{userName}</div>
+        <section key={post.id}>
+          <div>{findUser ? findUser.name : "Loading"}</div>
           <div>{post.body}</div>
-        </div>
+        </section>
       );
     }
     return null;
@@ -60,8 +74,10 @@ function UserProfile(props) {
 
   return (
     <div className="user-component">
-      {renderUser}
-      {renderUserPosts}
+      <div className="profile-wrapper">
+        {renderUser}
+        {renderUserPosts}
+      </div>
     </div>
   );
 }

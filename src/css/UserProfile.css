@@ -1,0 +1,30 @@
+.profile-wrapper {
+  width: 60%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.imgAvatar-wrapper {
+  position: relative;
+  /* background-color: aqua; */
+  padding-bottom: 30px;
+}
+
+.imgProfile {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  position: relative;
+  z-index: 1;
+}
+
+#userProfile-avatar {
+  font-size: 5em;
+  position: absolute;
+  z-index: 2;
+  left: 10px;
+  bottom: 10px;
+  color: #e64432;
+  background-color: #f2d829;
+}
