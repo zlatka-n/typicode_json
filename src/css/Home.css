@@ -4,9 +4,9 @@
 }
 
 .home-wrapper {
-  width: 80%;
-  margin-right: 10%;
-  margin-left: 10%;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 15px;
   border-radius: 5px;
   font-size: 0.75em;
   background-color: white;
@@ -15,11 +15,9 @@
 .post-wrapper {
   width: 100%;
   display: block;
-  margin-top: 10px;
   box-sizing: border-box;
-  padding: 15px 15px 15px 15px;
+  padding: 20px 15px 20px 15px;
   border-bottom: 1px solid#dcdcdc;
-  /* background-color: white; */
 }
 
 .post-body {
