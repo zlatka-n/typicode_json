@@ -39,7 +39,7 @@ function MainPage() {
 
     return results.map((user) => {
       return (
-        <div key={user.id} className="renderUser">
+        <section key={user.id} className="renderUser">
           <Link to={`/user/${user.id}`}>
             <FaUserCircle id="userIcon" className="linkToUser"></FaUserCircle>
           </Link>
@@ -50,7 +50,7 @@ function MainPage() {
             <div className="user-textInfo">Lives in {user.address.city}</div>
             <div className="user-textInfo">Works at {user.company.name}</div>
           </span>
-        </div>
+        </section>
       );
     });
   };

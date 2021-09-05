@@ -21,3 +21,11 @@
   padding-left: 15px;
   padding-right: 15px;
 }
+
+.header-wrapper > ul {
+  list-style-type: none;
+}
+
+ul > li {
+  float: left;
+}

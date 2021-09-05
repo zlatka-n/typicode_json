@@ -8,16 +8,18 @@ function Header() {
   return (
     <div className="header-component">
       <header className="header-wrapper">
-        <span id="home-icon">
-          <Link to="/">
-            <AiOutlineHome className="linkToUser homeIcon" />
-          </Link>
-        </span>
-        <span id="people-icon">
-          <Link to="/users">
-            <IoPeopleCircleOutline className="linkToUser homeIcon" />
-          </Link>
-        </span>
+        <ul>
+          <li id="home-icon">
+            <Link to="/">
+              <AiOutlineHome className="linkToUser homeIcon" />
+            </Link>
+          </li>
+          <li id="people-icon">
+            <Link to="/users">
+              <IoPeopleCircleOutline className="linkToUser homeIcon" />
+            </Link>
+          </li>
+        </ul>
       </header>
     </div>
   );
