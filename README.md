@@ -10,5 +10,6 @@ The aim of this project was to practice AJAX, so I created a website with posts 
 * React JS
 * Axios
 * Lodash
-* React Router DOM
+* React Router
+
 * React Icons
