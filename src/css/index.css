@@ -17,7 +17,8 @@ body {
 
 .mainPage-component,
 .home-component,
-.user-component {
+.user-component,
+.about-component {
   min-height: 90vh;
   width: 100%;
 }

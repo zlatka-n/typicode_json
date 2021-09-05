@@ -26,6 +26,6 @@
   list-style-type: none;
 }
 
-ul > li {
+.header-wrapper > ul > li {
   float: left;
 }
