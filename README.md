@@ -6,7 +6,7 @@ The website could be separated into three parts (pages):
 * user search - a list of users that can be searched through or sorted alphabetically
 * user's profile - whenever any of user's avatar or name is clicked on, selected user's profile will be shown
 
-Tech stack (libraries):
+#Tech stack (libraries) used:
 * React JS
 * Axios
 * Lodash
