@@ -7,7 +7,7 @@ html,
 body,
 .App {
   height: 100vh;
-  font-size: 16px;
+  font-size: 18px;
   font-family: system-ui, -apple-system, sans-serif;
   overflow: auto;
 }

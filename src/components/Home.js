@@ -27,6 +27,8 @@ function Home() {
     });
   }, []);
 
+  if (!results || !users) return "Loading";
+
   const displayResults = () => {
     const getPosts = results.map((post) => {
       return users.map((user) => {
