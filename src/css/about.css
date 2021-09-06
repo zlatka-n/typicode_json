@@ -1,0 +1,27 @@
+.about-wrapper {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 15px;
+  font-size: 0.75em;
+  line-height: 1.5;
+  font-size: 0.9em;
+}
+
+.about-text {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.about-title {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.section > ul > li {
+  margin-left: 20px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
