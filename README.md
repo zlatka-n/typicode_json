@@ -16,5 +16,4 @@ You can view the project here https://json-placeholder-zlatka-n.vercel.app.
 - Axios
 - Lodash
 - React Router
-
 - React Icons
