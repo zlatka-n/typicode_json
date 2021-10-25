@@ -39,3 +39,22 @@
 .userPost {
   font-size: 0.9em;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 20px;
+}
+
+ul > li {
+  display: inline;
+  font-size: 20px;
+}
+
+ul.pagination {
+  list-style-type: none;
+  font-size: 40px;
+  font-weight: bold;
+  background-color: white;
+}

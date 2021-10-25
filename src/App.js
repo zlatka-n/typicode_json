@@ -17,6 +17,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/users" exact component={MainPage} />
           <Route path="/user/:id" exact component={UserProfile} />
+          <Route path="/:pageNumber" exact component={Home} />
         </Switch>
         <Footer />
       </Router>
