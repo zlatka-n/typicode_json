@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function MainPage() {
   const [debouncedUser, setDebouncedUser] = useState("");
   const [results, setResults] = useState([]);
-  const [sortUsers, setSortUsers] = useState(null);
+  const [sortUsers, setSortUsers] = useState("az");
 
   const baseURL = "https://jsonplaceholder.typicode.com/users";
 
@@ -93,7 +93,7 @@ function MainPage() {
   };
 
   const getSortedUserArray = () => {
-    if (sortUsers === "az") {
+    if (sortUsers === "za") {
       results.sort((a, b) => {
         if (a.name < b.name) {
           return -1;
@@ -103,7 +103,7 @@ function MainPage() {
         }
         return 0;
       });
-    } else if (sortUsers === "za") {
+    } else if (sortUsers === "az") {
       results.sort((a, b) => {
         if (a.name > b.name) {
           return -1;
