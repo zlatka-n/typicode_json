@@ -1,9 +1,13 @@
+.mainPage-component {
+  margin-bottom: 40px;
+}
+
 /*search bar*/
 .searchBar-wrapper {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 15px;
+  margin-top: 40px;
 }
 
 .barAndBtn {
@@ -31,7 +35,7 @@
   margin: 0 auto;
   background-color: white;
   border-radius: 5px;
-  margin-top: 20px;
+  margin-top: 40px;
   line-height: 1.5;
 }
 .renderUser {
