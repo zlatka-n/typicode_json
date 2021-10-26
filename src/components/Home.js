@@ -31,7 +31,7 @@ function Home() {
     });
   }, []);
 
-  if (!results || !users) return "Loading";
+  if (!results || !users) return null;
 
   const getNewPage = (number) => {
     setCurrentPage(number + 1);
