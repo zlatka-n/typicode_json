@@ -96,32 +96,32 @@ function Home() {
       console.log(nextPage);
     }
 
-    const numPages = results.length / POSTS_PER_PAGE;
-    console.log(`numPages ${numPages}`);
-
     return (
-      <ul className="pagination">
-        <Link to={`/${previousPage}`}>
-          <li onClick={() => getNewPage(previousPage)}>Previous</li>
-        </Link>
-        <Link to={`/1`}>
-          <li onClick={() => getNewPage(1)}>1</li>
-        </Link>
-        <Link to={`/2`}>
-          <li onClick={() => getNewPage(2)}>2</li>
-        </Link>
-        <Link to={`/3`}>
-          <li onClick={() => getNewPage(3)}>3</li>
-        </Link>
-        <Link to={`/4`}>
-          <li onClick={() => getNewPage(4)}>4</li>
-        </Link>
-        <Link to={`/${nextPage}`}>
-          <li onClick={() => getNewPage(nextPage)}>Next</li>
-        </Link>
-      </ul>
+      <>
+        <ul className="pagination">
+          <Link to={`/${previousPage}`}>
+            <li onClick={() => getNewPage(previousPage)}>Previous</li>
+          </Link>
+          <Link to={`/1`}>
+            <li onClick={() => getNewPage(1)}>1</li>
+          </Link>
+          <Link to={`/2`}>
+            <li onClick={() => getNewPage(2)}>2</li>
+          </Link>
+          <Link to={`/3`}>
+            <li onClick={() => getNewPage(3)}>3</li>
+          </Link>
+          <Link to={`/4`}>
+            <li onClick={() => getNewPage(4)}>4</li>
+          </Link>
+          <Link to={`/${nextPage}`}>
+            <li onClick={() => getNewPage(nextPage)}>Next</li>
+          </Link>
+        </ul>
+      </>
     );
   };
+
   return (
     <div className="home-component">
       <div className="home-wrapper">{displayResults()}</div>
