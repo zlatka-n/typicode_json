@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function MainPage() {
   const [debouncedUser, setDebouncedUser] = useState("");
   const [results, setResults] = useState([]);
-  const [sortUsers, setSortUsers] = useState("az");
+  const [sortUsers, setSortUsers] = useState(null);
 
   const baseURL = "https://jsonplaceholder.typicode.com/users";
 
