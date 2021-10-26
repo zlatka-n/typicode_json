@@ -18,7 +18,11 @@
   display: block;
   box-sizing: border-box;
   padding: 20px 15px 20px 15px;
-  border-bottom: 1px solid#dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+section:nth-child(25) {
+  border-bottom: 0px;
 }
 
 .post-body {
@@ -43,18 +47,17 @@
 .pagination {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 30px;
   gap: 20px;
 }
 
-ul > li {
-  display: inline;
-  font-size: 20px;
+.list {
+  display: flex;
+  padding: 10px;
+  color: black;
 }
 
-ul.pagination {
-  list-style-type: none;
-  font-size: 40px;
-  font-weight: bold;
-  background-color: white;
+.pagination > a:focus {
+  background-color: #dcdcdc;
 }

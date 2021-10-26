@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "../css/Home.css";
 import axios from "axios";
 import { FaUserCircle } from "react-icons/fa";
+// import { FcPrevious } from "react-icons/fc";
+// import { FcNext } from "react-icons/fc";
 import { Link } from "react-router-dom";
 
 const POSTS_PER_PAGE = 25;
@@ -17,7 +19,6 @@ function Home() {
     axios.get(baseURL).then((response) => {
       const data = response.data;
       setResults(data);
-      // console.log(data);
     });
   }, []);
 
@@ -32,8 +33,13 @@ function Home() {
 
   if (!results || !users) return "Loading";
 
+  const getNewPage = (number) => {
+    setCurrentPage(number + 1);
+  };
+
+  ////////////////////POSTS RESULTS//////////////////
   const displayResults = () => {
-    ///RESULTS FOR ONE PAGE
+    /////RESULTS FOR ONE PAGE////
     const slicedResults = results.slice(
       POSTS_PER_PAGE * (currentPage - 1),
       currentPage * POSTS_PER_PAGE
@@ -75,57 +81,30 @@ function Home() {
     return getPosts;
   };
 
+  /////////////////PAGINATION/////////////////////////
   const pagination = () => {
-    let previousPage;
-    let nextPage;
-
-    const getNewPage = (number) => {
-      setCurrentPage(number);
+    const paginationBox = () => {
+      return (
+        <>
+          {Array.from({ length: 4 }, (_, i) => (
+            <Link to={`/${i + 1}`} key={i}>
+              <li onClick={() => getNewPage(i)} className="list">
+                {i + 1}
+              </li>
+            </Link>
+          ))}
+        </>
+      );
     };
-
-    if (currentPage > 1) {
-      previousPage = currentPage - 1;
-    } else if (currentPage === 1) {
-      previousPage = 1;
-    }
-
-    if (currentPage > 0 && currentPage < 4) {
-      nextPage = currentPage + 1;
-    } else {
-      nextPage = 4;
-      console.log(nextPage);
-    }
-
-    return (
-      <>
-        <ul className="pagination">
-          <Link to={`/${previousPage}`}>
-            <li onClick={() => getNewPage(previousPage)}>Previous</li>
-          </Link>
-          <Link to={`/1`}>
-            <li onClick={() => getNewPage(1)}>1</li>
-          </Link>
-          <Link to={`/2`}>
-            <li onClick={() => getNewPage(2)}>2</li>
-          </Link>
-          <Link to={`/3`}>
-            <li onClick={() => getNewPage(3)}>3</li>
-          </Link>
-          <Link to={`/4`}>
-            <li onClick={() => getNewPage(4)}>4</li>
-          </Link>
-          <Link to={`/${nextPage}`}>
-            <li onClick={() => getNewPage(nextPage)}>Next</li>
-          </Link>
-        </ul>
-      </>
-    );
+    return <>{paginationBox()}</>;
   };
 
   return (
     <div className="home-component">
-      <div className="home-wrapper">{displayResults()}</div>
-      <div className="pagination">{pagination()}</div>
+      <div className="home-wrapper">
+        {displayResults()}
+        <div className="pagination">{pagination()}</div>
+      </div>
     </div>
   );
 }
