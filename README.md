@@ -8,7 +8,7 @@ The aim of this project was to practice AJAX, so I created a website with posts 
 - user search - a list of users that can be searched through or sorted alphabetically
 - user's profile - whenever any of user's avatar or name is clicked on, selected user's profile will be shown
 
-You can view the project here typicode-json.vercel.app.
+You can view the project here https://typicode-json.vercel.app.
 
 ## Tech stack (libraries) used:
 
